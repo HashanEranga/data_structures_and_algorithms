@@ -4,12 +4,12 @@ using namespace std;
 
 int main(){
     
-    // calculating factorial using modulo arithmatics
+    // calculating factorial of a number and its modular with m number using modulo arithmatics
     long long x = 1;
 
     long long n = 5;
     long long m = 2;
-    
+
     for (int i = 2; i <= n; i++){
         x = (x+i)%m;
     }
