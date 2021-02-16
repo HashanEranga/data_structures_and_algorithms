@@ -3,17 +3,17 @@
 using namespace std;
 
 int main(){
-    int a = 5;
+    int a = 511111111;
     long long b = a*a;
 
     // wrong result produced here
-    cout << b << endl;
+    cout << "Wrong answer " << b << endl;
 
-    long long c = 5;
+    long long c = 511111111;
     b = c*c;
 
     // produce the right result when all the data in the same datatype
-    cout << b << endl;
+    cout << "correct answer " << b << endl;
 
     return 0;
 }
