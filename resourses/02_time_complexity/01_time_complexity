@@ -1,0 +1,128 @@
+Time Complexity on loops
+
+    //timecomplexity of this loop will be O(n)
+    for(int i =1; i <=n; i++){
+        //code
+    }
+
+    //time complexity of this loop will be O(n^2)
+    for (int i = 1; i <= n; i++){
+        for(int j = 1; j <= n; j++){
+            //code
+        }
+    }
+
+Order of the magnitude
+    The time complexity does not tell us the exact number of times of the inside loop is executed.
+    but it only shows the order of the magnitude
+
+    the following codes are 3n times, n+5 times and n times are run but the order of the complexity is
+    O(n). 
+
+    for(int i = 1; i <= 3*n; i++){
+        //no of times 3n
+        //but order of n => O(n)
+    }
+
+    for (int i = 1; i <= n+5; i++){
+        //no of times n+5
+        //but the order of n => O(n)
+    }
+
+    for (int i = 1; i <= n; i+=2){
+        //no of times are n/2 ceil
+        //but the order of n => O(n)
+    }
+
+Phases 
+    if the algorithm consists of consecutive phases the total time complexity if the 
+    largest time complexity of the single phase. The reason for this is the slowest phase 
+    is the usual bottleneck of the code
+
+    consider there is a code of order
+    O(n)
+    O(n^2)
+    O(n)
+
+    the order of the overall phase of the code is O(n^2)
+
+Sevaral Variables
+
+    Sometimes the time complexity depend on several factors In complexity formula contains sevaral Variables
+    The following code the time complexity of the code will be 
+
+    for(int i = 1; i <= n; i++){
+        for (int j=1; j <= m; m++){
+            //code time complexity is O(nm)
+        }
+    }
+
+Recursion 
+    The running complexity  of a recursive function depend on the number of times the function is called and the time 
+    complexity of a single call. And the total time complexity is the product of those values.
+
+    example 
+        void f(int n){
+            if(n==1) return;
+            f(n-1);
+        }
+
+        there are n function calls and the order of each call will be O(1) 
+    therefore the time complexity of the code is O(n)
+
+    example 
+        void g(int n){
+            if(n==1)return;
+            g(n-1);
+            g(n-1);
+        }
+
+complexity classes
+    O(1) = The running time of constant time 
+            do not depend on the input size
+    
+    O(logn) = logarithmic algorithm
+            halves the input size at each step
+
+    O(n^0.5) = A square root algorithms is slower than logarithm but faster than 
+                O(n) 
+
+    O(n) = A linear algorithm best possible time complexity.
+
+    O(nlogn) = Often indicate the algorithm sorts the input 
+                the data structure where each operation takes O(logn) order
+
+    O(n^2) = contains two nested loops 
+
+    O(n^3) = contains three nested loops 
+
+    O(2^n) = algorithm iterate through all the subsets of the input elements
+
+    O(n!) = This time complexity often indicates that the algorithm iterates through all the permutations of the input elements.
+
+
+    An algorithm is polynomial if the time complexity if at most O(n^k) k is a constant
+    Above all the complexities are polynomial except O(2^n) and O(n!)
+
+    k in polynomial algorithms are usually small there fore roughly the algorithms are efficient
+
+    NP hard problems cannot solve by polynomial time complexity
+
+
+Estimating Efficiency
+    calculating time complexity possible to check the algorithm is efficient 
+    starting point is the fact that a modern computer can perform some hundreds of million of operations in a second
+
+    input size          required time complexity
+    n <= 10                 O(n!)
+    n <= 20                 O(2^n)
+    n <= 500                O(n^3)
+    n <= 5000               O(n^2)
+    n <= 10^6               O(nlogn) or O(n)
+    n is larger             O(1) of O(logn)
+
+Maximum Sub Array Sum 
+    Algorithm1 => O(n^3)
+    Algorithm2 => O(n^2)
+    Algorithm3 => O(n)
+
