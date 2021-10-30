@@ -4,7 +4,8 @@ using namespace std;
 // time complexity of the functions 
 // O(n^3)
 void printSbArr(int * arr, int size);
-void printLargestSbArrSum(int * arr, int size);
+int printLargestSbArrSum(int * arr, int size);
+
 int main(int argc, char const *argv[])
 {
     int arr[] = {1,2,3,4,5,6,7,8,9};
@@ -14,7 +15,7 @@ int main(int argc, char const *argv[])
     printSbArr(arr, sizeofArr);
 
     // finding the largest sum of the subarrays
-    printLargestSbArrSum(arr, sizeofArr);
+    cout << "The largest sum of the subarray is :" << printLargestSbArrSum(arr, sizeofArr) << endl;
     return 0;
 }
 
@@ -32,7 +33,8 @@ void printSbArr(int * arr, int size){
     }
 }
 
-void printLargestSbArrSum(int * arr, int size){
+// bruteforce method for getting the subarray sum
+int printLargestSbArrSum(int * arr, int size){
     int max = 0;
     for(int i=0;i<size;i++){
         for(int j=i;j<size;j++){
@@ -42,8 +44,7 @@ void printLargestSbArrSum(int * arr, int size){
             }
             if(sum>max)
                 max = sum;
-            cout << sum << endl;
         }
     }
-    cout << "The maximum sum is : " << max << endl;
+    return max;
 }
