@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+// without duplicates all the pairs
 void printingPairs(int * arr, int size);
 
 int main(int argc, char const *argv[])
