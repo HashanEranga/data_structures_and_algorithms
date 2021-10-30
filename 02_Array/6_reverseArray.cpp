@@ -5,6 +5,7 @@ using namespace std;
 void dispArr(int * arr, int size);
 
 // method fot reverse array items
+// time complexity O(n)
 void reverseArr(int * arr, int size);
 
 int main(int argc, char const *argv[])
