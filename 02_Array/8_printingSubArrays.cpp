@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+// time complexity of the functions 
+// O(n^3)
 void printSbArr(int * arr, int size);
 void printLargestSbArrSum(int * arr, int size);
 int main(int argc, char const *argv[])
