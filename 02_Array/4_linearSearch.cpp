@@ -3,6 +3,8 @@ using namespace std;
 
 // Linear Search is the brute force method to find any value given in an array
 // address of the array, size of the array and the key of the searching is passed to the function 
+// Here in the given algorithm we move along all the elements in the algorithm in order to find the key value given in any array
+// therefore the time complexity of the algorithm will be O(n)
 int linear_search(int * arr, int size, int key);
 
 // method for populate an array 
