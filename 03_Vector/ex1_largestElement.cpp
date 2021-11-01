@@ -5,13 +5,14 @@
 using namespace std;
 
 int largestElement(vector<int> arr){
-    int max = 0;
+    int max = arr[0];
     for(int i=0;i<arr.size();i++){
         if(arr[i]>max)
             max=arr[i];
     }
     return max;
 }
+
 
 int main(int argc, char const *argv[])
 {
