@@ -37,19 +37,32 @@ int maxSumSubarrayPrefixMatrix(vector<int> A){
     return maximum;
 }
 
-int maxSumSubarray(vector<int> A){
-    
+int maxSumSubarrayKadansExtendedAlgorithm(vector<int> A){
+   int m = A[0];
+   int cs=0;
+   int maxelem = INT_MIN;
+
+   for(int i=0;i<A.size();i++){
+       cs+=A[i];
+       if(A[i]<0){
+           cs=0;
+       }
+       if(maxelem<A[i]){
+           maxelem = A[i];
+       }
+   } 
+   return (maxelem < 0) ? maxelem : m;
 }
 
 int main(int argc, char const *argv[])
 {
-    int arr[] = {1,2,3,4,5,6,7,8,9};
+    int arr[] = {-5,-4,-3,-2};
     int n = sizeof(arr)/sizeof(arr[0]);
 
     vector<int> array;
     array.assign(arr, arr+n);
 
-    cout << maxSumSubarray(array);
+    cout << maxSumSubarrayKadansExtendedAlgorithm(array);
     return 0;
 
 }
