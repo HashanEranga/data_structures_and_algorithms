@@ -31,12 +31,12 @@ int longestBand(vector<int> arr){
         int parent = element -1; 
 
         // if the parent element is not exist then it is a start node of the band  
-        if(unSet.find(parent)==unset.end()){
+        if(unSet.find(parent)==unSet.end()){
             int cnt=1; 
             int next_element = element + 1;
 
             // goes until there is no sequence element 
-            while(unSet.find(next_element)!=unset.end()){
+            while(unSet.find(next_element)!=unSet.end()){
                 next_element++;
                 cnt++;
             }
