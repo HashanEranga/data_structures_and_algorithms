@@ -1,6 +1,7 @@
 #include <iostream>
 #include <bitset>
 #include <vector>
+#include <unordered_set>
 
 using namespace std;
 
@@ -27,7 +28,7 @@ pair<int, int> pairSumBySorting(vector<int> array, int s);
 
 // using data structures ==> Hash tables
 // O(N)
-pair<int, int> pairSumByHashing(vector<int> array, int s);
+vector<int> pairSumByHashing(vector<int> arr, int S);
 
 // other functions require
 int binarySearch(vector<int> array, int key);
@@ -37,9 +38,10 @@ int main(int argc, char const *argv[])
     vector<int> array{10,5,2,3,-6,9,11};
     int s = 4;
 
-    pair<int,  int> ans1 = pairSumBruteforce(array, s);
-    pair<int,  int> ans2 = pairSumBySorting(array, s);
-    // pair<int,  int> ans3 = pairSumByHashing(array, s);
+    // auto for getting the return type automatically
+    auto ans1 = pairSumBruteforce(array, s);
+    auto ans2 = pairSumBySorting(array, s);
+    auto ans3 = pairSumByHashing(array, s);
 
     cout<<ans1.first<<endl;
     cout<<ans1.second<<endl;
@@ -47,8 +49,8 @@ int main(int argc, char const *argv[])
     cout<<ans2.first<<endl;
     cout<<ans2.second<<endl;
 
-    // cout<<ans3.first<<endl;
-    // cout<<ans3.second<<endl;
+    cout<<ans3[0]<<endl;
+    cout<<ans3[1]<<endl;
 
     return 0;
 }
@@ -82,6 +84,24 @@ pair<int, int> pairSumBySorting(vector<int> array, int s){
     return {INT_MAX, INT_MAX};
 }
 
+// using Hashing only iterate through the array check the availability of an element will be order of 1
+vector<int> pairSumByHashing(vector<int> arr, int S){
+    unordered_set<int> subArr;
+    vector<int> result;
+
+    for (int i = 0; i < arr.size(); i++)
+    {
+        int x = S-arr[i];
+        if(subArr.find(x)!=subArr.end()){
+            result.push_back(x);
+            result.push_back(arr[i]);
+            return result;
+        }
+        subArr.insert(arr[i]);
+    }
+    return {};
+}
+
 // O(logN)
 int binarySearch(vector<int> array, int key){
     int s,e,m;
@@ -93,6 +113,6 @@ int binarySearch(vector<int> array, int key){
         else if (array[m]>key) s=m+1;
         else e=m-1;
     }
-    cout << endl;
+    // cout << endl;
     return INT_MAX;
 }
