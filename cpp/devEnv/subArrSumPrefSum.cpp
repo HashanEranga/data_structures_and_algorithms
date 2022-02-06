@@ -16,6 +16,9 @@ int subArrSumPrefSum(vector<int> arr){
 		prefArr[i] = prefArr[i-1]+arr[i];
 	}
 
+	for(auto i:prefArr) cout << i << " ";
+	cout<<endl;
+
 	for(int i=0;i<n;i++){
 		for(int j=1;j<n;j++){
 			int currentSum;
