@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int fibRec(int n){
+    if (n<=1)
+        return n;
+    else 
+        return fibRec(n-1) + fibRec(n-2);
+}
+int main(int argc, char const *argv[])
+{
+    // find the fibonnaci number of 10
+    cout << fibRec(20) << endl;
+    return 0;
+}
