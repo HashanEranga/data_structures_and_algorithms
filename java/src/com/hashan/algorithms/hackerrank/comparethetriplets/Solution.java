@@ -1,4 +1,4 @@
-package com.hashan.algorithms.comparethetriplets;
+package com.hashan.algorithms.hackerrank.comparethetriplets;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

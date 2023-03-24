@@ -1,4 +1,4 @@
-package com.hashan.algorithms.diagonaldifference;
+package com.hashan.algorithms.hackerrank.diagonaldifference;
 
 import java.io.BufferedReader;
 import java.io.IOException;

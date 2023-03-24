@@ -1,4 +1,4 @@
-package com.hashan.algorithms.averybigsum;
+package com.hashan.algorithms.hackerrank.averybigsum;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

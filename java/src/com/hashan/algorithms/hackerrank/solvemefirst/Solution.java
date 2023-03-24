@@ -1,4 +1,4 @@
-package com.hashan.algorithms.solvemefirst;
+package com.hashan.algorithms.hackerrank.solvemefirst;
 
 import java.util.Scanner;
 

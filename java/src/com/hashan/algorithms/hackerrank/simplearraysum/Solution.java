@@ -1,4 +1,4 @@
-package com.hashan.algorithms.simplearraysum;
+package com.hashan.algorithms.hackerrank.simplearraysum;
 
 import java.io.*;
 import java.util.*;
