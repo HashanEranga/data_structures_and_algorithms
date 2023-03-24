@@ -17,9 +17,13 @@ public class Main {
         sb.add(g4);
         sb.add(g5);
         sb.add(g6);
+        GameEntry gn = sb.remove(1);
 
         for (int i = 0; i < sb.getScoreList().length; i++) {
-            System.out.println(sb.getScoreList()[i].getName() + " : " + sb.getScoreList()[i].getScore());
+            if(sb.getScoreList()[i] != null)
+                System.out.println(sb.getScoreList()[i].getName() + " : " + sb.getScoreList()[i].getScore());
         }
+
+        System.out.println(gn.getName() + " : " + gn.getScore());
     }
 }

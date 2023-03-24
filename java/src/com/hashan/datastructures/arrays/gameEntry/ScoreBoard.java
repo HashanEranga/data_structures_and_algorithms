@@ -41,4 +41,16 @@ public class ScoreBoard {
             }
         }
     }
+
+    public GameEntry remove(int i){
+        GameEntry temp = scoreList[i];
+        int j = i;
+        while(j < numEntries-1){
+            scoreList[j] = scoreList[j+1];
+            j++;
+        }
+        scoreList[j] = null;
+        numEntries--;
+        return temp;
+    }
 }
